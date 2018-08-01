@@ -1,0 +1,25 @@
+- Show all existing databases
+
+show dbs
+
+- Create db name called customer
+
+use customer
+
+- Create Database User
+
+db.createUser(
+   {
+     user: "Khilan",	
+     pwd: "Khilan",
+     roles: [ "readWrite", "dbAdmin" ]
+   }
+);
+
+- Create collection
+
+db.createCollection("customers");
+
+- show collections
+- Insert data
+db.customers.insert({first_name:"khilan", last_name:"unadkat"});
