@@ -1,0 +1,11 @@
+Step 1:
+
+Download MongoDB from https://www.mongodb.com/download-center#enterprise
+
+Step 2:
+
+Install MongoDB
+
+3. Set PATH in Environment Variable 
+
+PATH = C:\Program Files\MongoDB\Server\3.4\bin
