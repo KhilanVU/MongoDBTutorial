@@ -9,3 +9,9 @@ Install MongoDB
 3. Set PATH in Environment Variable 
 
 PATH = C:\Program Files\MongoDB\Server\3.4\bin
+
+Commit to git
+
+- git add installation_guide
+- git commit -m "first commit"
+- git push -u origin master
