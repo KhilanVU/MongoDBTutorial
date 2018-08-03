@@ -108,3 +108,13 @@ db.customers.find({first_name: "Sharon"});
 db.customers.find({$or:[{first_name: "Sharon"}, {first_name: "Troy"}]});
 db.customers.find({gender: "male"});
 db.customers.find({age: {$lt: 40}}).pretty();
+db.customers.find({"address.city": "Bostom"});
+db.customers.find({memberships: "mem1"});
+
+- to clear the shell: cls
+
+db.customers.find().sort({last_name:1}); -- Decending order
+db.customers.find().sort({last_name:-1}); -- Ascending order
+db.customers.find().count();
+db.customers.find().limit(4);
+db.customers.find().forEach(function(doc){print("Customer Name: "+doc.first_name)});
