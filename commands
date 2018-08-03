@@ -23,3 +23,88 @@ db.createCollection("customers");
 - show collections
 - Insert data
 db.customers.insert({first_name:"khilan", last_name:"unadkat"});
+db.customers.find() and db.customers.find().pretty();
+db.customers.insert([{first_name:"vinay", last_name:"unadkat"}, {first_name: "parul", last_name: "unadkat", gender: "female"}]);
+db.customers.update({first_name:"khilan"}, {first_name: "khilan", last_name: "unadkat", gender: "male"});
+db.customers.update({first_name:"vinay"}, {$set: {gender: "male"}});
+db.customers.update({first_name:"vinay"}, {$set: {age: 59}});
+db.customers.update({first_name:"vinay"}, {$inc: {age: 5}});
+db.customers.update({first_name:"vinay"}, {$unset: {age: 1}});
+db.customers.update({first_name:"heemakshi"}, {first_name: "heemakshi", last_name: "unadkat"}, {upsert: "true"});
+db.customers.update({first_name:"vinay"}, {$rename: {"gender":"sex"}});
+db.customers.remove({first_name:"khilan"});
+db.customers.remove({first_name:"khilan"}, {justOne: true});
+
+
+db.customers.insert([
+  {
+        first_name: "Troy",
+        last_name: "Makons",
+        gender: "male",
+        age: 33,
+        address: {
+            street: "432 Essex st",
+            city: "Lawrence",
+            state: "MA"
+        },
+        memberships: ["mem1", "mem2"],
+        balance: 125.32
+  },
+  {
+        first_name: "Beth",
+        last_name: "Jenkins",
+        gender: "female",
+        age: 23,
+        address: {
+            street: "411 Blue st",
+            city: "Bostom",
+            state: "MA"
+        },
+        memberships: ["mem2", "mem3"],
+        balance: 333.23
+  },
+  {
+        first_name: "Timothi",
+        last_name: "Wilkins",
+        gender: "male",
+        age: 53,
+        address: {
+            street: "22 School st",
+            city: "Amesbury",
+            state: "MA"
+        },
+        memberships: ["mem3", "mem4"],
+        balance: 22.25
+  },
+  {
+        first_name: "William",
+        last_name: "Jackson",
+        gender: "male",
+        age: 43,
+        address: {
+            street: "11 Albany st",
+            city: "Bostom",
+            state: "MA"
+        },
+        memberships: ["mem1"],
+        balance: 333.23
+  },
+  {
+        first_name: "Sharon",
+        last_name: "Thompson",
+        gender: "female",
+        age: 35,
+        address: {
+            street: "19 willis st",
+            city: "Worchester",
+            state: "MA"
+        },
+        memberships: ["mem1", "mem2"],
+        balance: 99.99
+  },
+])
+
+db.customers.find({first_name: "Sharon"});
+db.customers.find({$or:[{first_name: "Sharon"}, {first_name: "Troy"}]});
+db.customers.find({gender: "male"});
+db.customers.find({age: {$lt: 40}}).pretty();
