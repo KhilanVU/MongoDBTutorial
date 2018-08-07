@@ -24,14 +24,14 @@ db.createCollection("customers");
 - Insert data
 db.customers.insert({first_name:"khilan", last_name:"unadkat"});
 db.customers.find() and db.customers.find().pretty();
-db.customers.insert([{first_name:"vinay", last_name:"unadkat"}, {first_name: "parul", last_name: "unadkat", gender: "female"}]);
+db.customers.insert([{first_name:"x", last_name:"unadkat"}, {first_name: "z", last_name: "unadkat", gender: "female"}]);
 db.customers.update({first_name:"khilan"}, {first_name: "khilan", last_name: "unadkat", gender: "male"});
-db.customers.update({first_name:"vinay"}, {$set: {gender: "male"}});
-db.customers.update({first_name:"vinay"}, {$set: {age: 59}});
-db.customers.update({first_name:"vinay"}, {$inc: {age: 5}});
-db.customers.update({first_name:"vinay"}, {$unset: {age: 1}});
-db.customers.update({first_name:"heemakshi"}, {first_name: "heemakshi", last_name: "unadkat"}, {upsert: "true"});
-db.customers.update({first_name:"vinay"}, {$rename: {"gender":"sex"}});
+db.customers.update({first_name:"x"}, {$set: {gender: "male"}});
+db.customers.update({first_name:"x"}, {$set: {age: 59}});
+db.customers.update({first_name:"x"}, {$inc: {age: 5}});
+db.customers.update({first_name:"x"}, {$unset: {age: 1}});
+db.customers.update({first_name:"y"}, {first_name: "y", last_name: "unadkat"}, {upsert: "true"});
+db.customers.update({first_name:"x"}, {$rename: {"gender":"sex"}});
 db.customers.remove({first_name:"khilan"});
 db.customers.remove({first_name:"khilan"}, {justOne: true});
 
